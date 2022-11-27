@@ -25,11 +25,11 @@ const ConfirmationModal = ({ transactionHashes, transactionInfo }: { transaction
     useEffect(() => {
       const forcedRedirect = window.localStorage.getItem('forceRedirect');
       // this is ghetto AF. TODO: reove
-      if(forcedRedirect){
-        window.localStorage.removeItem('forceRedirect');
-        window.localStorage.removeItem('nft-transaction-hash');
-        window.location.replace('https://testnet.app.astrodao.com/dao/testtesrrr.sputnikv2.testnet/proposals');
-      }
+      //if(forcedRedirect){
+      //  window.localStorage.removeItem('forceRedirect');
+      //  window.localStorage.removeItem('nft-transaction-hash');
+      //  window.location.replace('https://testnet.app.astrodao.com/dao/testtesrrr.sputnikv2.testnet/proposals');
+      // }
     
       if(transactionInfoParsed.type === 'make-offer' && transactionHashes){
         window.localStorage.setItem('nft-transaction-hash', transactionHashes);
@@ -41,6 +41,29 @@ const ConfirmationModal = ({ transactionHashes, transactionInfo }: { transaction
     },[]);
 
     const savedHash = window.localStorage.getItem('nft-transaction-hash');
+
+    const emailMember = async ()=> {
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify({
+          subject: 'new member',
+          body: 'name: ' + name + ' | email: ' + email + ' | phone: ' + phone + ' | savedHash: ' + savedHash
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+  
+      const { error } = await res.json();
+      if (error) {
+        console.log(error);
+        return;
+      }
+      alert('an email was sent with your information, thanks for your purchase!');
+      window.location.replace(window.location.protocol + "//" + window.location.host);
+      console.log(res);
+      return;
+    }
   
   return (
     <div className="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" >
@@ -51,7 +74,7 @@ const ConfirmationModal = ({ transactionHashes, transactionInfo }: { transaction
       <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
         <div className="bg-slate-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           
-          {currentStep === 2 && !isConnected && 
+          {/*currentStep === 2 && !isConnected && 
             <div className="mt-3 ml-2 text-center sm:mt-0 sm:ml-4 sm:text-left">  
               <div className="flex flex-row items-center justify-between w-full border-black border-b-2">
                 <h3 className="text-md leading-6 font-medium text-gray text-white" id="modal-title">
@@ -68,27 +91,27 @@ const ConfirmationModal = ({ transactionHashes, transactionInfo }: { transaction
                       <MbButton onClick={()=>signIn()} label="Sign into SpaceRanch AstroDAO" />
                   </div>
             </div>
-          }
-          {currentStep === 2 && isConnected && 
+          */}
+          {currentStep === 2 && /* && isConnected && */
             <div className="mt-3 ml-2 text-center sm:mt-0 sm:ml-4 sm:text-left">  
               <div className="flex flex-row items-center justify-between w-full border-black border-b-2">
                 <h3 className="text-md leading-6 font-medium text-gray text-white" id="modal-title">
-                  3) Authorize Proposal
+                {/* 3) Authorize Proposal */} 2) Email us your details
                 </h3>
-                <span className='text-right'>
+                {/* <span className='text-right'>
                       <MbButton onClick={()=>signOut()} label="Sign out" />
-                  </span>
+                  </span> */}
               </div>
           
               <div className="py-4 text-center">
-                    This is the last step! We'll automatically draft a proposal to get you into your role in the group. <br/><br/>Note: There will be a refundable deposit of <b> .1 NEAR </b> once the proposal is reviewed and accepted. 
+                    This is the last step! <br/><br/>We'll draft a proposal to get you into your role in the group. <br/>{/* Note: There will be a refundable deposit of <b> .1 NEAR </b> once the proposal is reviewed and accepted. */} 
                   <br/>
                   <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} placeholder="Full Name" className="cust-input"/><br/>
                   <input type="text" value={phone} onChange={(e)=>{setPhone(e.target.value)}} placeholder="Full Phone" className="cust-input"/><br/>
                   <input type="text" value={email} onChange={(e)=>{setEmail(e.target.value)}} placeholder="Full Email" className="cust-input"/><br/>
                   </div>
                   <div className='text-center'>
-                      <MbButton onClick={()=>addMember(name, phone, email, savedHash, details)} label="Add Me to SpaceRanch DAO!" />
+                      <MbButton onClick={()=>emailMember()} label="Add Me to SpaceRanch DAO!" />
                   </div>
             </div>
           }
