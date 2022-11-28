@@ -16,7 +16,7 @@ const TextCard = ({ title, label, handleFunction }: TextCardType) => {
   return (
     <div className="bg-slate-900 rounded shadow-lg p-4 relative">
       <div className="">
-        <div className="text-xl text-white mt-1">{title}</div>
+        <div className="flex text-xl text-white mt-1 justify-center">{title}</div>
         <div className="text-sm mt-2"></div>
       </div>
       <div className="flex items-center mt-4 justify-center">
