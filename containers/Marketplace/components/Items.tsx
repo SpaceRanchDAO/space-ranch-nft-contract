@@ -64,7 +64,7 @@ const Items = ({ showModal, showConversationModal, showDashboardModal }: { showM
   });
 
   return (
-    <div className='w-full ml-6 items-center mt-4 mr-6'>
+    <div className='w-full items-center mt-4 mx-6'>
       <div className='flex w-full ml-6 items-center mt-4 hidden'>
         <div onClick={() => setSelectedTab('all')}>
           <MbTab
