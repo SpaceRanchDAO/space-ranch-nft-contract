@@ -13,7 +13,7 @@ const Item = ({ item, showModal }: {item: StoreThing, showModal: (item: StoreThi
         <div className="text-xl text-white mt-1 font-bold">{item.title}</div>
         <div className="text-sm">{item.storeId}</div>
       </div>
-      <div className="flex items-center mt-2 justify-end">
+      <div className="flex items-center mt-2 justify-center">
         <MbButton onClick={() => showModal(item)} label={`BUY`} />
         &nbsp;
         <MbButton onClick={() => openInNewTab('https://spaceranch.gitbook.io/documentation/membership-ranks')} label={`LEARN`} />
