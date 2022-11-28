@@ -84,7 +84,7 @@ const Store: NextPage = () => {
           </NearWalletProvider>
         }
       </div>
-      <LoginFollowUP />
+      {/* <LoginFollowUP /> */}
       <Footer />
     </div>
   );
