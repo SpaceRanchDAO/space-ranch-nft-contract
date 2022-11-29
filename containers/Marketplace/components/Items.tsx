@@ -5,7 +5,28 @@ import useStoreController, { Store } from "../controllers/useStoresController";
 import HeroSection from "./HeroSection";
 import { Item, LoadingItem } from "./Item";
 
-const Items = ({ showModal, showConversationModal, showDashboardModal }: { showModal: (item: StoreThing) => void, showConversationModal: () => void, showDashboardModal: () => void  }) => {
+interface TextCardType {
+  title: string;
+  label: string;
+  text: string;
+  handleFunction: any;
+}
+
+const TextCard = ({ title, label, text, handleFunction }: TextCardType) => {
+  return (
+    <div className="bg-slate-900 rounded shadow-lg p-4 relative flex flex-col justify-between">
+      <div className="">
+        <div className="flex text-xl text-white mt-1 justify-center">{title}</div>
+        <div className="text-sm mt-2">{text}</div>
+      </div>      
+      <div className="flex items-center mt-4 justify-center">
+        <MbButton onClick={() => handleFunction()} label={label} />
+      </div>
+    </div>
+  );
+}
+
+const Items = ({ showModal, showConversationModal, showDashboardModal }: { showModal: (item: StoreThing) => void, showConversationModal: () => void, showDashboardModal: () => void }) => {
   const [selectedTab, setSelectedTab] = useState('all');
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedStore, setSelectedStore] = useState('');
@@ -26,10 +47,10 @@ const Items = ({ showModal, showConversationModal, showDashboardModal }: { showM
     content: <span>All Stores</span>,
     onClick: () => setSelectedStore('')
   });
-  
+
   const scrollToPurchase = () => {
-    const section = document.querySelector( '#purchase-items' );
-    section.scrollIntoView( { behavior: 'smooth', block: 'start' } );
+    const section = document.querySelector('#purchase-items');
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   const openInNewTab = (url: string) => {
@@ -42,12 +63,12 @@ const Items = ({ showModal, showConversationModal, showDashboardModal }: { showM
   });
 
   return (
-    <div className='w-full ml-6 items-center mt-4 mr-6'>
+    <div className='w-full items-center mt-4 mx-6'>
       <div className='flex w-full ml-6 items-center mt-4 hidden'>
         <div onClick={() => setSelectedTab('all')}>
           <MbTab
             label={<span>All Items</span>}
-            isActive={selectedTab === 'all'} 
+            isActive={selectedTab === 'all'}
             isSmall
           />
         </div>
@@ -79,56 +100,21 @@ const Items = ({ showModal, showConversationModal, showDashboardModal }: { showM
           </div>
           <MbDropdownMenu
             items={storeTabs}
-            isOpen={menuOpen} 
-            className="mt-2" 
+            isOpen={menuOpen}
+            className="mt-2"
           />
         </MbMenuWrapper>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4 my-12">
-        <div className="bg-slate-900 rounded shadow-lg p-4 relative">
-          <div className="">
-            <div className="text-xl text-white mt-1 font-bold">Purchase Membership</div>
-            <div className="text-sm mt-2"></div>
-          </div>
-          <div className="flex items-center mt-4 justify-center">
-            <MbButton onClick={() => scrollToPurchase()} label={`Get Started`} />
-          </div>
-        </div>
-
-        <div className="bg-slate-900 rounded shadow-lg p-4 relative">
-          <div className="">
-            <div className="text-xl text-white mt-1 font-bold">Community Discussion</div>
-            <div className="text-sm mt-2"></div>
-          </div>
-          <div className="flex items-center mt-4 justify-center">
-            <MbButton onClick={() => showConversationModal()} label={`Take Me There`} />
-          </div>
-        </div>
-
-        <div className="bg-slate-900 rounded shadow-lg p-4 relative">
-          <div className="">
-            <div className="text-xl text-white mt-1 font-bold">Documentation</div>
-            <div className="text-sm mt-2"></div>
-          </div>
-          <div className="flex items-center mt-4 justify-center">
-            <MbButton onClick={() => openInNewTab('https://spaceranch.gitbook.io/documentation')} label={`Learn More`} />
-          </div>
-        </div>
-
-        <div className="bg-slate-900 rounded shadow-lg p-4 relative">
-          <div className="">
-            <div className="text-xl text-white mt-1 font-bold">Project Dashboard</div>
-            <div className="text-sm mt-2"></div>
-          </div>
-          <div className="flex items-center mt-4 justify-center">
-            <MbButton onClick={() => showDashboardModal()} label={`Sign In`} />
-          </div>
-        </div>
+        <TextCard title="Purchase Membership" label="Get Started" text="blah blah blah..." handleFunction={scrollToPurchase} />
+        <TextCard title="Community Discussion" label="Take Me There" text="blah blah blah..." handleFunction={showConversationModal} />
+        <TextCard title="Documentation" label="Learn More" text="blah blah blah..." handleFunction={() => openInNewTab('https://spaceranch.gitbook.io/documentation')} />
+        <TextCard title="Project Dashboard" label="Sign In" text="blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah..." handleFunction={showDashboardModal} />
       </div>
-      <hr className="style2 ml-8 mr-8 mt-4 shadow-lg"/>
+      <hr className="style2 ml-8 mr-8 mt-4 shadow-lg" />
       <HeroSection />
       {/** grid */}
-      <hr id="purchase-items" className="style2 ml-8 mr-8 shadow-lg"/>
+      <hr id="purchase-items" className="style2 ml-8 mr-8 shadow-lg" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 my-12">
         {loading ? (
           <LoadingItem />
