@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="pl-4 pr-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 gap-4 my-12 text-white">
           <div className="text-xl text-white mt-1 font-bold">
           &#62;&#62;&#62; Live Demo on NEAR Testnet <br/><br/>
-            Join us on our mission to collaboratively build the future of space exploration in Wyoming.
+            Join us on our mission to collaboratively build the future of space exploration
           </div>
           <div className="">
           <span className="text-white">The SpaceRanch Membership is a mechanism for governance and applications built for the SpaceRanch ecosystem, which includes access to the physical properties and digital immersive environments.</span>
