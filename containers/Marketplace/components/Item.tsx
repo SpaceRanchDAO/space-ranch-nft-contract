@@ -8,14 +8,13 @@ const Item = ({ item, showModal }: {item: StoreThing, showModal: (item: StoreThi
   };
 
   return (
-    <div className="bg-slate-900 rounded shadow-lg p-4 relative">
+    <div className="bg-base-blue-dark rounded shadow-lg p-4 relative">
       <img src={item.media} className="w-full h-72 object-cover"></img>
       <div className="">
         <div className="text-xl text-white mt-1 font-bold flex justify-between">
           <span>{item.title}</span>
           <span>{getCurrency(item.price)}</span>
         </div>
-        <div className="text-sm">{item.storeId}</div>
       </div>
       <div className="flex items-center mt-2 justify-center">
         <MButton onClick={() => showModal(item)} label={`BUY`} />
@@ -33,7 +32,7 @@ const LoadingItem = (): JSX.Element => {
     <>
       {products.map((_, i) => (
         <div key={i} className="flex items-center justify-center ">
-            <div className="w-full h-64 bg-slate-900 animate-pulse"></div>
+            <div className="w-full h-64 bg-base-blue-dark animate-pulse"></div>
         </div>
       ))}
     </>

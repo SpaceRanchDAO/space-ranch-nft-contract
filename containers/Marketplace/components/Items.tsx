@@ -15,7 +15,7 @@ interface TextCardType {
 
 const TextCard = ({ title, label, text, handleFunction }: TextCardType) => {
   return (
-    <div className="bg-slate-900 rounded shadow-lg p-4 relative flex flex-col justify-between">
+    <div className="bg-base-blue-dark rounded shadow-lg p-4 relative flex flex-col justify-between">
       <div className="">
         <div className="flex text-xl text-white mt-1 justify-center">{title}</div>
         <div className="text-sm mt-2">{text}</div>

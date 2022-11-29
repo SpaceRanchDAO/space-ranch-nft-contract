@@ -1,4 +1,4 @@
-import { MbText, MbButton, EState,} from 'mintbase-ui';
+import { EState, MbButton } from 'mintbase-ui';
 
 const DashboardModal = ({ closeModal }: { closeModal: () => void }) => {
   
@@ -12,7 +12,7 @@ const DashboardModal = ({ closeModal }: { closeModal: () => void }) => {
       <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
       <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-        <div className="bg-slate-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <div className="bg-base-blue-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div className="mt-3 ml-2 text-center sm:mt-0 sm:ml-4 sm:text-left">
             <div className="flex flex-row items-center justify-between w-full border-black">
               <h3 className="text-md leading-6 font-medium text-gray text-white" id="modal-title">

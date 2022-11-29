@@ -1,20 +1,17 @@
 import type { NextPage } from "next";
-import { SetStateAction, useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
-import Header from "../containers/Marketplace/components/Header";
-import Footer from "../containers/Marketplace/components/Footer";
-import HeroSection from "../containers/Marketplace/components/HeroSection";
-import Items from "../containers/Marketplace/components/Items";
 import BuyModal from "../containers/Marketplace/components/BuyModal";
-import MembershipTiers from "../containers/Marketplace/components/MembershipTiers";
-import { StoreThing } from "../containers/Marketplace/controllers/useMarketplaceController";
 import ConfirmationModal from "../containers/Marketplace/components/ConfirmationModal";
 import ConversationModal from "../containers/Marketplace/components/ConversationModal";
 import DashboardModal from "../containers/Marketplace/components/DashboardModal";
+import Footer from "../containers/Marketplace/components/Footer";
+import Header from "../containers/Marketplace/components/Header";
+import Items from "../containers/Marketplace/components/Items";
 import TermsOfService from "../containers/Marketplace/components/TermsOfService";
-import LoginFollowUP from "../containers/Marketplace/components/LoginFollowUp";
-import { NearWalletProvider } from "../services/providers/NearWalletProvider"
+import { StoreThing } from "../containers/Marketplace/controllers/useMarketplaceController";
+import { NearWalletProvider } from "../services/providers/NearWalletProvider";
 
 const Store: NextPage = () => {
   const [showBuyModal, setShowBuyModal] = useState(false);
@@ -68,7 +65,7 @@ const Store: NextPage = () => {
  
 
   return (
-    <div className="flex flex-1 flex-col min-h-screen text-gray-500  bg-slate-900/90">
+    <div className="flex flex-1 flex-col min-h-screen text-gray-500  bg-base-blue-dark/90">
       <Header />
       <div className="flex w-full">
         <Items showModal={handleOpenTermsModal} showConversationModal={handleShowConversationModal} showDashboardModal={handleShowDashboardModal}/>
