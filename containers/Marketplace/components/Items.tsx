@@ -107,10 +107,10 @@ const Items = ({ showModal, showConversationModal, showDashboardModal }: { showM
         </MbMenuWrapper>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4 gap-4 my-12">
-        <TextCard title="Purchase Membership" label="Get Started" text="blah blah blah..." handleFunction={scrollToPurchase} />
-        <TextCard title="Community Discussion" label="Take Me There" text="blah blah blah..." handleFunction={showConversationModal} />
-        <TextCard title="Documentation" label="Learn More" text="blah blah blah..." handleFunction={() => openInNewTab('https://spaceranch.gitbook.io/documentation')} />
-        <TextCard title="Project Dashboard" label="Sign In" text="blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah...blah blah blah..." handleFunction={showDashboardModal} />
+        <TextCard title="Purchase Membership" label="Get Started" text="" handleFunction={scrollToPurchase} />
+        <TextCard title="Community Discussion" label="Take Me There" text="" handleFunction={showConversationModal} />
+        <TextCard title="Documentation" label="Learn More" text="" handleFunction={() => openInNewTab('https://spaceranch.gitbook.io/documentation')} />
+        <TextCard title="Project Dashboard" label="Sign In" text="" handleFunction={showDashboardModal} />
       </div>
       <hr className="style2 ml-8 mr-8 mt-4 shadow-lg" />
       <HeroSection />
