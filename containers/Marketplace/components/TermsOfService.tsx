@@ -20,13 +20,13 @@ const TermsOfService = ({ closeModal, continuePurchase }: { closeModal: () => vo
       <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
         <div className="bg-base-blue-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div className="mt-3 ml-2 text-center sm:mt-0 sm:ml-4 sm:text-left">
-            <div className="flex flex-row items-center justify-between w-full border-black border-b-2">
+            <div className="flex flex-row items-center justify-between w-full border-black border-b">
               <h3 className="text-xl leading-7 font-semibold text-white" id="modal-title">
                 Terms of Purchase
               </h3>
               <button
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md border-2 border-slate-900 hover:border-black text-gray-400 hover:text-primary focus:outline focus:text-gray-500 transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-2 rounded-md border-none outline-none text-gray-400 hover:text-primary focus:text-gray-500 transition duration-150 ease-in-out"
                 onClick={() => closeModal()}
                 aria-label="Close"
               >
