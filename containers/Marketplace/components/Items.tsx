@@ -1,9 +1,10 @@
-import { EIconName, MbButton, MbDropdownMenu, MbIcon, MbMenuWrapper, MbTab } from "mintbase-ui";
+import { EIconName, MbDropdownMenu, MbIcon, MbMenuWrapper, MbTab } from "mintbase-ui";
 import { useState } from "react";
 import useStoreThingsController, { StoreThing } from "../controllers/useMarketplaceController";
 import useStoreController, { Store } from "../controllers/useStoresController";
 import HeroSection from "./HeroSection";
 import { Item, LoadingItem } from "./Item";
+import MButton from "./MButton";
 
 interface TextCardType {
   title: string;
@@ -20,7 +21,7 @@ const TextCard = ({ title, label, text, handleFunction }: TextCardType) => {
         <div className="text-sm mt-2">{text}</div>
       </div>      
       <div className="flex items-center mt-4 justify-center">
-        <MbButton onClick={() => handleFunction()} label={label} />
+        <MButton onClick={() => handleFunction()} label={label} />
       </div>
     </div>
   );

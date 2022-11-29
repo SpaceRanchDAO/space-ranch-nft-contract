@@ -1,6 +1,6 @@
-import { MbButton } from "mintbase-ui";
 import { StoreThing } from "../controllers/useMarketplaceController";
 import { getCurrency } from "../utils/helper";
+import MButton from "./MButton";
 
 const Item = ({ item, showModal }: {item: StoreThing, showModal: (item: StoreThing) => void}) => {
   const openInNewTab = (url: string) => {
@@ -18,9 +18,9 @@ const Item = ({ item, showModal }: {item: StoreThing, showModal: (item: StoreThi
         <div className="text-sm">{item.storeId}</div>
       </div>
       <div className="flex items-center mt-2 justify-center">
-        <MbButton onClick={() => showModal(item)} label={`BUY`} />
+        <MButton onClick={() => showModal(item)} label={`BUY`} />
         &nbsp;
-        <MbButton onClick={() => openInNewTab('https://spaceranch.gitbook.io/documentation/membership-ranks')} label={`LEARN`} />
+        <MButton onClick={() => openInNewTab('https://spaceranch.gitbook.io/documentation/membership-ranks')} label={`LEARN`} />
       </div>
     </div>
   );
