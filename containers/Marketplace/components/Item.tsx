@@ -10,13 +10,8 @@ const Item = ({ item, showModal }: { item: StoreThing, showModal: (item: StoreTh
   return (
     <div className="bg-base-blue-dark rounded shadow-lg p-4 relative">
       <img src={item.media} className="w-full h-72 object-cover"></img>
-<<<<<<< HEAD
       <div className="my-3.5">
         <div className="text-xl text-white font-bold flex justify-between">
-=======
-      <div className="">
-        <div className="text-xl text-white mt-1 flex justify-between">
->>>>>>> a8c72412c8e0e4a4798f81ca3f059ad1692385c1
           <span>{item.title}</span>
           <span>{item.price && getCurrency(item.price)}</span>
         </div>
