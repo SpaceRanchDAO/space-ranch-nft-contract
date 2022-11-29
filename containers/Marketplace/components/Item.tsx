@@ -1,5 +1,6 @@
-import { MbButton } from "mintbase-ui"
+import { MbButton } from "mintbase-ui";
 import { StoreThing } from "../controllers/useMarketplaceController";
+import { getCurrency } from "../utils/helper";
 
 const Item = ({ item, showModal }: {item: StoreThing, showModal: (item: StoreThing) => void}) => {
   const openInNewTab = (url: string) => {
@@ -10,14 +11,16 @@ const Item = ({ item, showModal }: {item: StoreThing, showModal: (item: StoreThi
     <div className="bg-slate-900 rounded shadow-lg p-4 relative">
       <img src={item.media} className="w-full h-72 object-cover"></img>
       <div className="">
-        <div className="text-xl text-white mt-1 font-bold">{item.title}</div>
+        <div className="text-xl text-white mt-1 font-bold flex justify-between">
+          <span>{item.title}</span>
+          <span>{getCurrency(item.price)}</span>
+        </div>
         <div className="text-sm">{item.storeId}</div>
       </div>
       <div className="flex items-center mt-2 justify-center">
         <MbButton onClick={() => showModal(item)} label={`BUY`} />
         &nbsp;
         <MbButton onClick={() => openInNewTab('https://spaceranch.gitbook.io/documentation/membership-ranks')} label={`LEARN`} />
-        
       </div>
     </div>
   );
@@ -38,3 +41,4 @@ const LoadingItem = (): JSX.Element => {
 };
 
 export { Item, LoadingItem };
+

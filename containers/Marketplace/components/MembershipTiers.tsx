@@ -1,5 +1,3 @@
-import { MbText } from "mintbase-ui";
-import Markdown from 'markdown-to-jsx';
 
 const MembershipTiers = () => {
   return (

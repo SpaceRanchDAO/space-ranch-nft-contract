@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useState } from "react";
+import { tokens } from "../utils/constants";
 
 const GET_MB_STORE_THINGS = gql`
   query StoreThings($storeIds: [mb_views_store_things_bool_exp!]) {
@@ -26,6 +27,7 @@ export type StoreThing = {
   storeId: string;
   thingId: string;
   title: string;
+  price?: number;
 };
 
 
@@ -49,8 +51,13 @@ const useStoreThingsController = () => {
     },
     onCompleted: (data) => {
       const _things = data?.mb_views_store_things;
-
-      setThings(_things);
+      
+      // IMPORTANT: added for testnet version sorting (we need to fix this issue with graphql in the future)
+      const result = tokens.map((token) => {
+        return {..._things[token.thingId], price: token.price};
+      });
+      
+      setThings(result);
     },
   })
 
