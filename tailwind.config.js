@@ -7,12 +7,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        customRed: {
-          dark: '#D70037',
-          light: '#FF0035'
-        }
-      }
+        base: {
+          red: {
+            dark: "#D70037",
+            light: "#FF0035",
+          },
+          blue: {
+            dark: "#0C2586",
+            light: "#0035FF",
+          },
+          white: "#FFFFFF",
+        },
+      },
     },
   },
   plugins: [],
-}
+};
