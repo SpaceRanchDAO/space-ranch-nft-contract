@@ -1,4 +1,3 @@
-import { MbButton } from "mintbase-ui"
 import { useWallet } from "../../../services/providers/WalletProvider"
 import MButton from "./MButton"
 
@@ -17,7 +16,7 @@ const Header = () => {
       <div className="flex items-center">
         {isConnected && (
           // <MbButton onClick={signOut} label={`Sign Out ${details.accountId}`} className="hover:bg-white" />
-          <MbButton label={`Sign Out ${details.accountId}`} onClick={signOut} />
+          <MButton label={`Sign Out ${details.accountId}`} onClick={signOut} />
         )}
         {!isConnected && (
           // <MbButton onClick={signIn} label="Connect"/>
