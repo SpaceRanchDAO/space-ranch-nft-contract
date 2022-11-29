@@ -54,7 +54,11 @@ const useStoreThingsController = () => {
       
       // IMPORTANT: added for testnet version sorting (we need to fix this issue with graphql in the future)
       const result = tokens.map((token) => {
-        return {..._things[token.thingId], price: token.price};
+        return {
+          ..._things[token.thingId], 
+          media: token.media,
+          price: token.price
+        };
       });
       
       setThings(result);
