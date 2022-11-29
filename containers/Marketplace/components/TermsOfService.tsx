@@ -26,7 +26,7 @@ const TermsOfService = ({ closeModal, continuePurchase }: { closeModal: () => vo
               </h3>
               <button
                 type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md border-none outline-none text-gray-400 hover:text-primary focus:text-gray-500 transition duration-150 ease-in-out"
+                className="inline-flex items-center justify-center p-1 rounded-md text-gray-400 hover:text-primary transition duration-150 ease-in-out"
                 onClick={() => closeModal()}
                 aria-label="Close"
               >
