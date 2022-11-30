@@ -37,7 +37,7 @@ const ConversationModal = ({ closeModal }: { closeModal: () => void }) => {
                         </h3>
                         <hr className="style3" />
                         <div className="text-sm text-center cursor-pointer" id="modal-title">
-                            A special conversation area reserved for current members of the platform. Active members will have purchased one of the membership subscriptions from our website. 
+                            A special conversation area reserved for current members of the platform. Active members will have purchased one of the membership ranks. 
                         </div>
                         <div className="flex items-center mt-4 justify-center">
                             <MbButton state={EState.DISABLED} label={`Coming Soon`} disabled={true} />
