@@ -49,7 +49,7 @@ const ConversationModal = ({ closeModal }: { closeModal: () => void }) => {
                         </h3>
                         <hr className="style3" />
                         <div className="text-sm text-center cursor-pointer" id="modal-title">
-                            Not ready to commit to a membership, but want to get involved in the conversation? Come join us on Discord as we hammer out exciting details for the SpaceRanch DAO!
+                            Not ready to commit to a membership, but want to get involved in the conversation? Join us and participate in the townhall, as a citizen of the SpaceRanch.
                         </div>
                         <div className="flex items-center mt-4 justify-center">
                             <MbButton onClick={() => openInNewTab('https://discord.gg/sj9gQFXUaW')}  label={`Go to Discord`} state={EState.ACTIVE} />
