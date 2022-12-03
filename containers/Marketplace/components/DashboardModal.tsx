@@ -16,7 +16,7 @@ const DashboardModal = ({ closeModal }: { closeModal: () => void }) => {
           <div className="mt-3 ml-2 text-center sm:mt-0 sm:ml-4 sm:text-left">
             <div className="flex flex-row items-center justify-between w-full border-black">
               <h3 className="text-md leading-6 font-medium text-gray text-white" id="modal-title">
-                Project Dashboard
+                DAO Dashboard
               </h3>
               <button
                 type="button"
@@ -33,11 +33,11 @@ const DashboardModal = ({ closeModal }: { closeModal: () => void }) => {
                 <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1 2xl:grid-cols-1 gap-4 my-3">
                     <div>
                         <h3 className="text-md leading-6 font-medium text-gray text-white text-center" id="modal-title">
-                            Feature Coming Soon!
+                            Dashboard Coming Soon!
                         </h3>
                         <hr className="style3" />
                         <div className="text-sm text-center cursor-pointer" id="modal-title">
-                            We've got a new feature coming that will allow you to track many aspects of the project, from this application.
+                            We're working on an application that will enable members to interact with the SpaceRanch DAO.
                         </div>
                         <div className="flex items-center mt-4 justify-center">
                             <MbButton onClick={() => closeModal()}  label={`Return to Dashboard`} state={EState.ACTIVE} />
