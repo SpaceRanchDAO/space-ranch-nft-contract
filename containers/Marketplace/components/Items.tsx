@@ -68,8 +68,7 @@ const Items = ({
   });
 
   const scrollToPurchase = () => {
-    const section = document.querySelector("#purchase-items");
-    section.scrollIntoView({ behavior: "smooth", block: "start" });
+    openInNewTab("https://discord.gg/6KKf7hkdEk");
   };
 
   const openInNewTab = (url: string) => {
