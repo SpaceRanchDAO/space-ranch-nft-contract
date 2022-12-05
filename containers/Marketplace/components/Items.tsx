@@ -99,8 +99,8 @@ const Items = ({
                     {selectedStore === ""
                       ? "All Stores"
                       : stores.find(
-                          (store: Store) => store.id === selectedStore
-                        )?.name}
+                        (store: Store) => store.id === selectedStore
+                      )?.name}
                   </span>
                   <div className="pointer-events-none">
                     <MbIcon
@@ -151,7 +151,7 @@ const Items = ({
           title="Project Dashboard"
           label="Sign In"
           text=""
-          handleFunction={showDashboardModal}
+          handleFunction={() => openInNewTab("http://104.251.218.7:3000/dao/spaceranch.sputnikv2.testnet")}
         />
       </div>
       <hr className="style2 ml-8 mr-8 mt-4 shadow-lg" />
